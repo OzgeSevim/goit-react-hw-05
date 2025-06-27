@@ -22,7 +22,11 @@ const HomePage = () => {
     getMovies();
   }, []);
 
-  return <div>{movies.length > 0 && <MovieList movies={movies} />}</div>;
+  return (
+    <div style={{ marginTop: "20px" }}>
+      {movies.length > 0 && <MovieList movies={movies} />}
+    </div>
+  );
 };
 
 export default HomePage;

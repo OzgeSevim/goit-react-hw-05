@@ -8,7 +8,7 @@ const MoviesPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("searchText");
+  const query = searchParams.get("query");
 
   useEffect(() => {
     if (!query) {
@@ -41,13 +41,16 @@ const MoviesPage = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="query" />
-        <button type="submit"></button>
-      </form>
       <div>
         <MovieList movies={movies} />
       </div>
+      <form
+        onSubmit={handleSubmit}
+        style={{ position: "absolute", top: "20px" }}
+      >
+        <input type="text" name="query" />
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };

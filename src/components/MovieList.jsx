@@ -4,10 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
-    <div>
+    <div style={{ marginTop: "20px" }}>
       {movies.map((movie) => (
         <li key={movie.id}>
-          <Link to="/movies/${movieId}" state={{ from: location }}>
+          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
             {movie.title}
           </Link>
         </li>

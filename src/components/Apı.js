@@ -15,15 +15,15 @@ export const fetchMovies = async () => {
   return response.data.results;
 };
 
-export const fetchMovieDetails = async (movie_id) => {
-  const response = await axios.get(`${baseUrl}/movie/${movie_id}`, options);
-  console.log(response);
+export const fetchMovieDetails = async (movieId) => {
+  const response = await axios.get(`${baseUrl}/movie/${movieId}`, options);
+  console.log(response.data);
   return response.data;
 };
 
-export const fetchMovieCast = async (movie_id) => {
+export const fetchMovieCast = async (movieId) => {
   const response = await axios.get(
-    `${baseUrl}/movie/${movie_id}/credits`,
+    `${baseUrl}/movie/${movieId}/credits`,
     options
   );
   console.log(response);
@@ -41,9 +41,9 @@ export const searchMovie = async (query) => {
   return response.data.results;
 };
 
-export const fetchMovieReviews = async (movie_id) => {
+export const fetchMovieReviews = async (movieId) => {
   const response = await axios.get(
-    `${baseUrl}/movie/${movie_id}/reviews`,
+    `${baseUrl}/movie/${movieId}/reviews`,
     options
   );
   console.log(response);
